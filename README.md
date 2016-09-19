@@ -12,3 +12,5 @@ my own starter pack (not finished yet!)
 - [ ] Fabric Crashlytics
 - [ ] Fabric Answers
 - [ ] Fastlane
+- [ ] React Router
+- [ ] GraphQL

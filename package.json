@@ -1,0 +1,46 @@
+{
+  "name": "react-native-redux-boilerplate",
+  "version": "0.0.0",
+  "description": "my own starter pack (not finished yet!)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "BABEL_ENV=test mocha --require ./tests/setup.js --compilers js:babel-core/register ./tests/**/*.spec.js",
+    "test:watch": "npm run test -- --watch --watch-extensions js --growl",
+    "coverage": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorlimansky/react-native-boilerplate.git"
+  },
+  "author": "limansky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorlimansky/react-native-boilerplate/issues"
+  },
+  "homepage": "https://github.com/igorlimansky/react-native-boilerplate#readme",
+  "dependencies": {
+    "react": "~15.3.1",
+    "react-native": "^0.33.0",
+    "react-native-elements": "^0.5.0",
+    "react-native-i18n": "^0.1.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "reduxsauce": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-module-resolver": "^2.2.0",
+    "babel-plugin-transform-regenerator": "^6.14.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-react-native": "^1.9.0",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.1",
+    "enzyme": "^2.4.1",
+    "mocha": "^3.0.2",
+    "nyc": "^8.3.0",
+    "redux-devtools": "^3.3.1",
+    "sinon": "^1.17.5"
+  }
+}

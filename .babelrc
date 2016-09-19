@@ -1,0 +1,29 @@
+{
+  "presets": [
+    "react-native"
+  ],
+  "env": {
+    "development": {
+      "sourceMaps": "inline"
+    },
+    "test": {
+      "plugins": [
+        ["module-resolver", {
+          "root": ["./src"],
+          "alias": {
+            "@actions": "./src/core/actions",
+            "@i18n": "./src/i18n",
+            "@fixtures":  "./src/fixtures",
+            "@sagas": "./src/core/sagas",
+            "@components": "./src/views/components",
+            "@themes": "./src/views/themes",
+            "@compositions": "./src/views/compositions",
+            "@services": "./src/core/services"
+          }
+        }],
+        "transform-regenerator",
+        "transform-runtime"
+      ]
+    }
+  }
+}

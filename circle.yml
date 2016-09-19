@@ -1,0 +1,46 @@
+machine:
+  node:
+    version: 6.3.0
+  ruby:
+    version: rbx-2.2.6
+
+dependencies:
+  override:
+    - android list sdk --all
+    - echo y | android update sdk --no-ui -a -t 9
+    - npm install -g react-native-cli code-push-cli
+    - npm install
+    - code-push login --accessKey $CODE_PUSH_ACCESS_KEY
+    - sudo gem install fastlane --verbose
+
+test:
+  override:
+    - npm test
+
+deployment:
+  staging:
+    branch: [develop]
+    commands:
+      # Create deployment and publish a release
+      - code-push release-react $CODE_PUSH_APP_NAME android
+
+  staging:
+    branch: [develop]
+    commands:
+     - bundle exec fastlane fabric_silent
+
+  testflight:
+   tag: /beta-.*/
+   commands:
+    - bundle exec fastlane beta
+
+  release:
+    tag: [master]
+    commands:
+    - code-push release-react $CODE_PUSH_APP_NAME android -d Production
+
+#  release:
+#    tag: /release-.*/
+#    commands:
+#    - bundle exec fastlane appstore
+
