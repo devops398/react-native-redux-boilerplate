@@ -1,6 +1,9 @@
 # react-native-boilerplate
 my own starter pack (not finished yet!)
 
+npm run android-deploy
+works for old androids
+
 ### TODO
 
 - [ ] RN 33

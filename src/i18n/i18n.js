@@ -15,6 +15,7 @@ I18n.translations = {
     cancel:                  'Cancel',
     welcome:                 'Welcome',
     login:                   'Login',
+    createAnAccount:         'Create an Account',
   }
 }
 

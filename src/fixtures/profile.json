@@ -1,0 +1,9 @@
+{
+  "name": "user",
+  "availablePermits": "30",
+  "permitsLeft": "12",
+  "card":  {
+    "number": "1234",
+    "date": "17/16"
+  }
+}

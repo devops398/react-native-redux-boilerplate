@@ -6,9 +6,9 @@ import Config from '../../config/debug_settings'
 import createSagaMiddleware from 'redux-saga'
 import sagas from '../sagas'
 import R from 'ramda'
-import Reactotron from 'reactotron'
 import devTools from 'remote-redux-devtools'
 import ReduxPersist from '../../config/redux_persist'
+import RehydrationServices from '../services/rehydration_services'
 import Types from '@actions/types'
 var Fabric = require('react-native-fabric');
 var { Answers } = Fabric;
@@ -78,7 +78,6 @@ export default () => {
   if (ReduxPersist.active) {
     const enhancers = compose(
       applyMiddleware(...middleware),
-      Reactotron.storeEnhancer(),
       autoRehydrate(),
       devTools()
     )
@@ -93,7 +92,6 @@ export default () => {
   } else {
     const enhancers = compose(
       applyMiddleware(...middleware),
-      Reactotron.storeEnhancer()
     )
 
     store = createStore(

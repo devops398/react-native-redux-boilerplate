@@ -1,3 +1,4 @@
+import immutablePersistenceTransform from '../core/store/immutable_persistence_transform'
 import { persistentStoreBlacklist, persistentStoreWhitelist } from '../core/reducers'
 import { AsyncStorage } from 'react-native'
 

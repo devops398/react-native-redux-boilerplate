@@ -7,7 +7,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "BABEL_ENV=test mocha --require ./tests/setup.js --compilers js:babel-core/register ./tests/**/*.spec.js",
     "test:watch": "npm run test -- --watch --watch-extensions js --growl",
-    "coverage": "nyc mocha"
+    "coverage": "nyc mocha",
+    "android-deploy": "adb install android/app/build/outputs/apk/app-debug.apk"
   },
   "repository": {
     "type": "git",
@@ -20,13 +21,27 @@
   },
   "homepage": "https://github.com/igorlimansky/react-native-boilerplate#readme",
   "dependencies": {
-    "react": "~15.3.1",
-    "react-native": "^0.33.0",
-    "react-native-elements": "^0.5.0",
+    "apisauce": "^0.7.0",
+    "format-json": "^1.0.3",
+    "querystringify": "0.0.4",
+    "ramda": "^0.23.0",
+    "react": "~15.4.2",
+    "react-native": "^0.40.0",
+    "react-native-code-push": "^1.16.1-beta",
+    "react-native-drawer": "^2.3.0",
+    "react-native-elements": "^0.9.0",
+    "react-native-fabric": "^0.4.0",
+    "react-native-fabric-crashlytics": "^0.1.8",
     "react-native-i18n": "^0.1.1",
-    "react-redux": "^4.4.5",
+    "react-native-router-flux": "^3.37.0",
+    "react-native-vector-icons": "^4.0.0",
+    "react-redux": "^5.0.1",
     "redux": "^3.6.0",
-    "reduxsauce": "^0.2.0"
+    "redux-logger": "^2.7.4",
+    "redux-persist": "^4.0.1",
+    "redux-saga": "^0.14.2",
+    "reduxsauce": "^0.4.1",
+    "seamless-immutable": "^7.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -41,6 +56,7 @@
     "mocha": "^3.0.2",
     "nyc": "^8.3.0",
     "redux-devtools": "^3.3.1",
+    "remote-redux-devtools": "^0.5.7",
     "sinon": "^1.17.5"
   }
 }
