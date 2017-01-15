@@ -1,6 +1,6 @@
 import '../utils'
-import API from '../../src/core/services/api'
-import FixtureAPI from '../../src/core/services/fixture_api'
+import API from '@services/api'
+import FixtureAPI from '@services/fixture_api'
 import R from 'ramda'
 
 describe('Fixtures test', () => {
