@@ -6,14 +6,14 @@ works for old androids
 
 ### TODO
 
-- [ ] RN 33
+- [x] RN 40
 - [ ] Docker
-- [ ] Redux
+- [x] Redux
 - [ ] RxConnect
-- [ ] Mocha
-- [ ] CodePush
-- [ ] Fabric Crashlytics
-- [ ] Fabric Answers
+- [x] Mocha
+- [x] CodePush
+- [x] Fabric Crashlytics
+- [x] Fabric Answers
 - [ ] Fastlane
 - [ ] React Router
 - [ ] GraphQL
