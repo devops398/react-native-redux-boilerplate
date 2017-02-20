@@ -17,8 +17,10 @@ class NavigationRouter extends Component {
         <Scene key='drawer' component={NavigationDrawer} renderBackButton={NavItems.backButton}>
           <Scene key='drawerChildrenWrapper' navigationBarStyle={Styles.navBar} titleStyle={Styles.title}
                  leftButtonIconStyle={Styles.leftButton} renderBackButton={NavItems.backButton} rightButtonTextStyle={Styles.rightButton}>
-            <Scene initial key='presentation' component={PresentationScreen} hideNavBar/>
-            <Scene key='login' component={LoginScreen} title='Login' hideNavBar/>
+            <Scene initial key='presentation' component={PresentationScreen} renderRightButton={NavItems.backButton}
+                   renderBackButton={NavItems.hamburgerButton} renderTitle={NavItems.logo} hideNavBar={false} />
+            <Scene key='login' component={LoginScreen} title='Login' renderRightButton={NavItems.backButton}
+                   renderBackButton={NavItems.hamburgerButton} renderTitle={NavItems.logo} hideNavBar={false} />
           </Scene>
         </Scene>
       </Router>

@@ -16,7 +16,7 @@ export default {
   backButton () {
     return (
       <TouchableOpacity onPress={NavigationActions.pop} style={{marginTop: Metrics.smallMargin, marginLeft: Metrics.smallMargin}}>
-        <Icon name="chevron-thin-left" size={Metrics.icons.tiny} color={Colors.white} />
+        <Icon name="chevron-thin-left" size={Metrics.icons.tiny} color={Colors.black} />
       </TouchableOpacity>
     )
   },
@@ -45,11 +45,7 @@ export default {
     return (
       <View style={{flex: 1, justifyContent: 'center'}}>
       <TouchableOpacity onPress={toggleDrawer}>
-        <Image
-              source={Images.profile_icon}
-              style={{alignSelf: 'flex-start', width:Metrics.icons.tiny}}
-              resizeMode='contain'
-        />
+        <Icon name="chevron-thin-left" size={Metrics.icons.tiny} color={Colors.black} />
       </TouchableOpacity>
       </View>
     )
@@ -58,14 +54,7 @@ export default {
   logo (){
     return (
       <View style={{flex: 1, justifyContent: 'center'}}>
-        <Image
-          source={Images.app_icon}
-          style={{
-            alignSelf: 'center',
-            height:   36,
-            width:    84
-          }}
-          resizeMode="contain"/>
+        <Icon name="chevron-thin-left" size={Metrics.icons.tiny} color={Colors.black} />
       </View>
     )
   }

@@ -8,6 +8,7 @@ global.__DEV__ = true
 // We enable mockery and leave it on.
 mockery.enable()
 
+mockery.registerMock('react-native-router-flux', {Actions:{}});
 // Silence the warnings when *real* modules load... this is a change from
 // the norm.  We want to opt-in instead of opt-out because not everything
 // will be mocked.
@@ -27,6 +28,7 @@ m._load = (request, parent, isMain) => {
   return originalLoader(request, parent, isMain)
 }
 
+mockery.registerMock('react-native-fabric', {Answers:{logContentView: (name, type, id) => {}}});
 require("babel-register")({
   ignore: /node_modules\/(?!react-native-share)/
 });
