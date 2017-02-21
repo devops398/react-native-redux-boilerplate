@@ -65,6 +65,11 @@
       <string>Octicons.ttf</string>
       <string>SimpleLineIcons.ttf</string>
       <string>Zocial.ttf</string>
+      <string>Roboto-Thin.ttf</string>
+      <string>Roboto-Light.ttf</string>
+      <string>OpenSans-Light.ttf</string>
+      <string>OpenSans-Semibold.ttf</string>
+      <string>OpenSans-Regular.ttf</string>
     </array>
     <key>Fabric</key>
     <dict>

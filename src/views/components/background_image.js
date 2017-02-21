@@ -7,9 +7,7 @@ class BackgroundImage extends Component {
     return (
       <Image source={ source }
              style={ {
-               flex:   1,
-               width:  null,
-               height: null, ...style
+               flex:   1, ...style
              } }
              {...props}>
         { children }

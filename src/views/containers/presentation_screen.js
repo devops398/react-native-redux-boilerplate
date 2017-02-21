@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import { FabricWrapper } from '@components/fabric_answers_wrapper'
 
-import {PresentationPage, LoginButton, SignUpButton, LogoLabel } from '@compositions/presentation'
+import {PresentationPage, LoginButton, SignUpButton, LogoLabel } from '../compositions/presentation'
 
 class PresentationScreen extends Component {
 

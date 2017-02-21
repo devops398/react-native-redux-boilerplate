@@ -7,10 +7,7 @@ import { View } from 'react-native'
 export default class LoginButton extends Component {
   render() {
     return (
-      <RoundedButton
-        style={[ApplicationStyles.flat_button, { backgroundColor: Colors.white }]}
-        onPress={this.props.onPress}
-        text={i18n.t('signIn')}/>
+      <View />
     )
   }
 }
