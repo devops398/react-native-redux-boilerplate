@@ -13,7 +13,7 @@ const ApplicationStyles = {
     alignSelf:      'center'
   },
   button:              {
-    borderColor:      Colors.blue,
+    borderColor:      Colors.transparent,
     borderWidth:      Metrics.borderWidth,
     borderRadius:     Metrics.borderRadius,
     padding:          Metrics.smallMargin,

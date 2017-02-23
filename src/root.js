@@ -3,6 +3,8 @@ import { View, StatusBar } from 'react-native'
 import { Provider } from 'react-redux'
 import Actions from './core/actions/creators'
 import DebugSettings from './config/debug_settings'
+import { connect } from 'react-redux'
+
 import NavigationRouter from './views/navigation/nav_router'
 // import './Config/PushConfig'
 
@@ -10,8 +12,11 @@ import NavigationRouter from './views/navigation/nav_router'
 import { ApplicationStyles } from '@themes'
 
 import crashlytics from 'react-native-fabric-crashlytics';
+import { addNavigationHelpers } from 'react-navigation';
 
-export default class Root extends React.Component {
+import AppNavigator from '@navigation';
+
+class Root extends React.Component {
   static propTypes = {
     store: PropTypes.object.isRequired
   }
@@ -31,7 +36,7 @@ export default class Root extends React.Component {
           <StatusBar
             barStyle='light-content'
           />
-          <NavigationRouter />
+          <AppNavigator />
         </View>
       </Provider>
     )
@@ -41,3 +46,14 @@ export default class Root extends React.Component {
     return this.renderApp()
   }
 }
+
+
+const mapStateToProps = ( state ) => {
+  console.log('mapStateToProps');
+  console.log(state);
+  return {
+    navigation: state.navigation
+  }
+}
+
+export default connect(mapStateToProps)(Root)

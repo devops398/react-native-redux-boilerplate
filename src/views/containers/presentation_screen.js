@@ -1,43 +1,62 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
 import { connect } from 'react-redux'
-import { Actions } from 'react-native-router-flux'
 import { FabricWrapper } from '@components/fabric_answers_wrapper'
 
-import {PresentationPage, LoginButton, SignUpButton, LogoLabel } from '../compositions/presentation'
+import Actions from '@actions/creators'
+import { Actions as NavigationActions } from 'react-native-router-flux'
+import { PresentationPage, LoginForm, LogoLabel } from '../compositions/presentation'
 
 class PresentationScreen extends Component {
 
   static propTypes = {
-    login: PropTypes.func,
+    login:    PropTypes.func,
     register: PropTypes.func
   }
 
-  render () {
+  state = {
+    username: '',
+    password: ''
+  }
+
+  handlePressLogin = () => {
+    const { username, password } = this.state
+    this.isAttempting            = true
+    // attempt a login - a saga is listening to pick it up from here.
+    console.log(this.props)
+//    this.props.home()
+    this.props.attemptLogin('username', 'password')
+  }
+
+  handleChangeUsername = ( text ) => {
+    this.setState({ username: text })
+  }
+
+  handleChangePassword = ( text ) => {
+    this.setState({ password: text })
+  }
+
+  render() {
     return (
       <PresentationPage>
-          <View style={{flex: 1}} />
-          <LogoLabel />
-          <View style={{flex: 1}} />
-
-          <LoginButton onPress={this.props.login} />
-
-          <SignUpButton onPress={this.props.register} />
-
+        <View style={{ flex: 1 }}/>
+        <LogoLabel />
+        <View style={{ flex: 1 }}/>
+        <LoginForm login={this.handlePressLogin}/>
       </PresentationPage>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-  }
+const mapStateToProps = ( state ) => {
+  return {}
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = ( dispatch ) => {
   return {
-    login: Actions.login,
-    register: Actions.register
+    login:        NavigationActions.login,
+    register:     NavigationActions.register,
+    attemptLogin: ( username, password ) => dispatch(Actions.requestLogin(username, password)),
   }
 }
 

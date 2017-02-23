@@ -1,6 +1,5 @@
 import LogoLabel from './logo_label'
-import LoginButton from './login_button'
-import SignUpButton from './signup_button'
 import PresentationPage from './presentation_page'
+import LoginForm from './login_form'
 
-export {LogoLabel, LoginButton, SignUpButton, PresentationPage}
+export {LoginForm, LogoLabel, PresentationPage}
