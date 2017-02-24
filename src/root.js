@@ -36,7 +36,12 @@ class Root extends React.Component {
           <StatusBar
             barStyle='light-content'
           />
-          <AppNavigator />
+          <AppNavigator
+            navigation={addNavigationHelpers({
+              dispatch: this.props.dispatch,
+              state: this.props.navigation,
+            })}
+          />
         </View>
       </Provider>
     )

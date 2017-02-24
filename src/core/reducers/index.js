@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
 import LoginReducer from './login'
 import Profile from './profile'
-import Routes from './routes'
+import Navigation from './routes'
 
 // glue all the reducers together into 1 root reducer
 export default combineReducers({
   login:    LoginReducer,
   profile:  Profile,
-  routes:   Routes
+  navigation:   Navigation
 })
 
 // Put reducer keys that you do NOT want stored to persistence here

@@ -1,6 +1,7 @@
 import { take, put, call } from 'redux-saga/effects'
 import Types from '../actions/types'
 import Actions from '../actions/creators'
+import { NavigationActions } from 'react-navigation';
 
 export default ( api ) => {
 
@@ -11,7 +12,10 @@ export default ( api ) => {
       yield put(Actions.loginFailure('WRONG'))
     } else {
       // dispatch successful logins
+      console.log('success')
       yield put(Actions.loginSuccess(username))
+      console.log('navigate..')
+      yield put({type: NavigationActions.NAVIGATE, routeName: 'Home'})
     }
   }
 
