@@ -40,7 +40,9 @@ class HomeScreen extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Profile />
-        <Tabs />
+        <Tabs style={{
+          flex: 3
+        }}/>
       </View>
     )
   }
