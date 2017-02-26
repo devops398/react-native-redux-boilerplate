@@ -1,6 +1,6 @@
-import NewsFlow from './news_flow'
-import ActivityFlow from './activity_flow'
+import NewsFlow from '../../containers/home/news_flow'
+import ActivityFlow from '../../containers/home/activity_flow'
 import Profile from './profile'
-import Tabs from './tabs'
+import Tabs from '../../containers/home/tabs'
 
 export {Profile, NewsFlow, ActivityFlow, Tabs}

@@ -5,7 +5,9 @@ import { FabricWrapper } from '@components/fabric_answers_wrapper'
 
 import Actions from '@actions/creators'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import { NewsFlow, ActivityFlow, Profile, Tabs } from '../compositions/home'
+import { Profile } from '../../compositions/home'
+import Tabs from './tabs'
+
 
 class HomeScreen extends Component {
 
@@ -41,7 +43,7 @@ class HomeScreen extends Component {
       <View style={{ flex: 1 }}>
         <Profile />
         <Tabs style={{
-          flex: 3
+          flex: 1
         }}/>
       </View>
     )

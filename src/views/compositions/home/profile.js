@@ -6,7 +6,7 @@ import {
   Button
 } from 'react-native-elements'
 
-export default class LoginButton extends Component {
+export default class Profile extends Component {
   render() {
     return (
       <View style={{
@@ -14,7 +14,7 @@ export default class LoginButton extends Component {
         alignItems:     'center',
         flex:           0.3
       }}>
-        <Image style={styles.image} source={{ uri: 'https://pp.vk.me/c629421/v629421077/177af/LjOTkQzhCx4.jpg' }}/>
+        <Image style={styles.image} source={{ uri: 'https://pp.vk.me/c626426/v626426980/56ebe/CdQmEWe9fSI.jpg' }}/>
         <Text>User Name</Text>
       </View>
     )
