@@ -8,7 +8,8 @@
     "test": "BABEL_ENV=test mocha --require ./src/tests/setup.js --compilers js:babel-core/register ./src/tests/**/*.spec.js",
     "test:watch": "npm run test -- --watch --watch-extensions js --growl",
     "coverage": "nyc mocha",
-    "android-deploy": "adb install android/app/build/outputs/apk/app-debug.apk"
+    "android-deploy": "adb install android/app/build/outputs/apk/app-debug.apk",
+    "update-schema": "babel-node ./scripts/updateSchema.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   "dependencies": {
     "apisauce": "^0.7.0",
     "format-json": "^1.0.3",
+    "graphql": "^0.9.1",
+    "graphql-relay": "^0.5.1",
     "querystringify": "0.0.4",
     "ramda": "^0.23.0",
     "react": "~15.4.2",
@@ -52,6 +55,8 @@
     "babel-plugin-transform-regenerator": "^6.14.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-react-native": "^1.9.0",
+    "babel-relay-plugin": "^0.11.0",
+    "babel-relay-plugin-loader": "^0.10.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.5.1",
     "enzyme": "^2.4.1",
@@ -65,5 +70,10 @@
     "remote-redux-devtools": "^0.5.7",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0"
+  },
+  "metadata": {
+    "graphql": {
+      "schema": "./data/schema.json"
+    }
   }
 }
