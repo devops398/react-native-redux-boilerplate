@@ -1,10 +1,5 @@
 {
   "presets": [
-    {
-      "plugins": [
-        "./scripts/babelRelayPlugin"
-      ]
-    },
     "react-native"
   ],
   "env": {

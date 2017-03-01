@@ -1,24 +1,64 @@
-import React from 'react';
-import Relay, {
-  DefaultNetworkLayer,
-  RootContainer,
-} from 'react-relay';
+import React, { PropTypes } from 'react'
+import { View, StatusBar } from 'react-native'
+import { Provider } from 'react-redux'
+import Actions from './core/actions/creators'
+import DebugSettings from './config/debug_settings'
+import { connect } from 'react-redux'
 
-Relay.injectNetworkLayer(
-  new DefaultNetworkLayer('http://localhost:3000')
-);
+import NavigationRouter from './views/navigation/nav_router'
+// import './Config/PushConfig'
 
+// Styles
+import { ApplicationStyles } from '@themes'
 
-import App from './app';
-import AppRoute from './routes/app_route';
+import crashlytics from 'react-native-fabric-crashlytics';
+import { addNavigationHelpers } from 'react-navigation';
 
-export default class Root extends React.Component {
-  render() {
+import AppNavigator from '@navigation';
+
+class App extends React.Component {
+  static propTypes = {
+    store: PropTypes.object.isRequired
+  }
+
+  componentWillMount () {
+    const { dispatch } = this.props.store
+    console.log('fabriq inited')
+    crashlytics.init();
+    dispatch(Actions.startup())
+  }
+
+  renderApp () {
+    console.disableYellowBox = !DebugSettings.yellowBox
     return (
-      <RootContainer
-        Component={App}
-        route={new AppRoute({status: 'any'})}
-      />
-    );
+      <Provider store={this.props.store}>
+        <View style={{flex: 1}}>
+          <StatusBar
+            barStyle='light-content'
+          />
+          <AppNavigator
+            navigation={addNavigationHelpers({
+              dispatch: this.props.dispatch,
+              state: this.props.navigation,
+            })}
+          />
+        </View>
+      </Provider>
+    )
+  }
+
+  render () {
+    return this.renderApp()
   }
 }
+
+
+const mapStateToProps = ( state ) => {
+  console.log('mapStateToProps');
+  console.log(state);
+  return {
+    navigation: state.navigation
+  }
+}
+
+export default connect(mapStateToProps)(App)
