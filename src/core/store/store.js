@@ -61,6 +61,7 @@ const crashLogger    = store => next => action => {
     throw err
   }
 }
+
 middleware.push(sagaMiddleware)
 middleware.push(answersLogger)
 middleware.push(crashLogger)

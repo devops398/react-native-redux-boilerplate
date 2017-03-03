@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import Actions from './core/actions/creators'
 import DebugSettings from './config/debug_settings'
 import { connect } from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
+import client from './core/reducers/appollo'
 
 import NavigationRouter from './views/navigation/nav_router'
 // import './Config/PushConfig'
@@ -21,37 +23,36 @@ class App extends React.Component {
     store: PropTypes.object.isRequired
   }
 
-  componentWillMount () {
+  componentWillMount() {
     const { dispatch } = this.props.store
     console.log('fabriq inited')
     crashlytics.init();
     dispatch(Actions.startup())
   }
 
-  renderApp () {
+  renderApp() {
     console.disableYellowBox = !DebugSettings.yellowBox
     return (
-      <Provider store={this.props.store}>
-        <View style={{flex: 1}}>
+      <ApolloProvider store={this.props.store} client={client}>
+        <View style={{ flex: 1 }}>
           <StatusBar
             barStyle='light-content'
           />
           <AppNavigator
             navigation={addNavigationHelpers({
               dispatch: this.props.dispatch,
-              state: this.props.navigation,
+              state:    this.props.navigation,
             })}
           />
         </View>
-      </Provider>
+      </ApolloProvider>
     )
   }
 
-  render () {
+  render() {
     return this.renderApp()
   }
 }
-
 
 const mapStateToProps = ( state ) => {
   console.log('mapStateToProps');
